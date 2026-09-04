@@ -1,0 +1,11 @@
+{
+  "name": "Qingshan XPTV 专属订阅源",
+  "urls": [
+    {
+      "name": "Jable TV (增强版)",
+      "type": 3,
+      "api": "csp_jable",
+      "ext": "https://ghp.xptvhelper.link/https://raw.githubusercontent.com/qs858053851-wq/xptv-extensions/main/js/jable.js"
+    }
+  ]
+}
