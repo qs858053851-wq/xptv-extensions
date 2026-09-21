@@ -6,6 +6,12 @@
       "type": 3,
       "api": "csp_jable",
       "ext": "https://ghp.xptvhelper.link/https://raw.githubusercontent.com/qs858053851-wq/xptv-extensions/main/js/jable.js"
+    },
+    {
+      "name": "黄果短剧 (增强版)",
+      "type": 3,
+      "api": "csp_huangguo",
+      "ext": "https://ghp.xptvhelper.link/https://raw.githubusercontent.com/qs858053851-wq/xptv-extensions/main/js/huangguo.js?v=2.0.0"
     }
   ]
 }
