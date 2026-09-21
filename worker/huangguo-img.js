@@ -117,8 +117,11 @@ export default {
     // 上游图片是加密字节、且 URL 带会过期的 auth_key，
     // 用 URL 整体做缓存键即可：同一张图在同一次 auth_key 有效期内复用缓存。
     // Cloudflare 边缘缓存；非 CF 运行时（本地自测）自动跳过
+    // 缓存键剥掉 query：auth_key 每次都变，但同一路径的图片内容是稳定的，
+    // 不剥 query 会导致永远不命中缓存（每张封面 1.6~2.7 MB，很痛）。
     const cache = typeof caches !== 'undefined' && caches.default ? caches.default : null
-    const cacheKey = new Request(reqUrl.toString(), { method: 'GET' })
+    const cacheKeyUrl = reqUrl.origin + reqUrl.pathname + '?u=' + encodeURIComponent(tUrl.origin + tUrl.pathname)
+    const cacheKey = new Request(cacheKeyUrl, { method: 'GET' })
     if (cache) {
       const hit = await cache.match(cacheKey)
       if (hit) return hit

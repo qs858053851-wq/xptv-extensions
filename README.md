@@ -13,12 +13,12 @@
 - ⚡ 直连提取原画 1080P/4K HLS (`.m3u8`) 视频流。
 - 🛡️ 自动附带 `Referer: https://jable.tv/` 防盗链请求头。
 
-### 2. 黄果短剧（增强版 Spider JS）`v2.0.0`
+### 2. 黄果短剧（增强版 Spider JS）`v2.0.1`
 - 🗂 首页 / AI成人短剧 / AI成人漫剧 / AI换脸 / AI魔改 / 排行榜 六个分类页，均支持翻页。
 - 🔍 关键词搜索、剧集列表、`epPlaySrcs` 直取 `.m3u8`。
 - 🐛 **修掉了初版的三个坑**：
 
-| 问题 | 根因 | v2.0.0 的处理 |
+| 问题 | 根因 | v2.0.x 的处理 |
 | --- | --- | --- |
 | 主页整片乱码 | 站点在客户端声明 `Accept-Encoding: br` 时返回 Brotli，XPTV 的 `$fetch` 不解 br | 请求头强制 `Accept-Encoding: identity`，服务端直接返回明文 UTF-8 |
 | 封面显示不出来 | 封面是 AES-128-CBC 加密字节，XPTV 端无解密能力 | 走外部解密代理（见下方 Worker），详见 `worker/huangguo-img.js` |
@@ -46,7 +46,7 @@ https://ghp.xptvhelper.link/https://raw.githubusercontent.com/qs858053851-wq/xpt
 | 站点 | 名称 | 标识 (API) | 扩展链接 (Ext) |
 | --- | --- | --- | --- |
 | Jable TV | `Jable TV` | `csp_jable` | `.../main/js/jable.js` |
-| 黄果短剧 | `黄果短剧` | `csp_huangguo` | `.../main/js/huangguo.js?v=2.0.0` |
+| 黄果短剧 | `黄果短剧` | `csp_huangguo` | `.../main/js/huangguo.js?v=2.0.1` |
 
 完整链接（把 `js/xxx.js` 拼在下面这个前缀后面）：
 
@@ -68,6 +68,10 @@ key = "f5d965df75336270"    iv = "97b60394abc2fbe1"
 > hex 解码只有 8 bytes，AES-128 会直接报 `Invalid key length`。
 
 ### 部署
+
+> ✅ **已经部署好了**，不用再动：
+> `https://huangguo-img.qs858053851.workers.dev/?u=`
+> 已写进 `js/huangguo.js` 顶部的 `IMG_PROXY`，实测返回 `image/jpeg` / `image/png`。
 
 ```bash
 # 方式一：CLI
@@ -112,7 +116,7 @@ xptv-extensions/
 ├── xptv.json                  # 订阅源清单（Jable + 黄果）
 ├── js/
 │   ├── jable.js               # Jable TV 扩展
-│   └── huangguo.js            # 黄果短剧扩展 v2.0.0
+│   └── huangguo.js            # 黄果短剧扩展 v2.0.1
 └── worker/
     └── huangguo-img.js        # 黄果封面 AES 解密代理（Cloudflare Worker）
 ```

@@ -1,6 +1,6 @@
 // ============================================================================
 //  黄果短剧  huangguoai.com   ——   XPTV 专属增强版源
-//  version: 2.0.0
+//  version: 2.0.1
 // ============================================================================
 //
 //  【一、主页乱码修复】
@@ -31,12 +31,13 @@
 //
 // ============================================================================
 
-// 解密代理地址。两种格式都认：
+// 解密代理地址。三种格式都认：
 //   'https://xxx.workers.dev/?u='          （推荐，带查询参数）
+//   'https://xxx.workers.dev/?url='        （旧版 Worker 的参数名）
 //   'https://xxx.workers.dev/hg'           （Worker 路由，会自己接 ?u=）
-const IMG_PROXY = ''
+const IMG_PROXY = 'https://huangguo-img.qs858053851.workers.dev/?u='
 
-const VERSION = '2.0.0'
+const VERSION = '2.0.1'
 
 const UA =
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
