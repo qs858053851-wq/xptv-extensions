@@ -321,7 +321,7 @@ function parseRanks(html) {
 // ---------- 接口 ----------
 
 async function getLocalInfo() {
-    return jsonify({ ver: 2, name: '黄果短剧', api: 'csp_huangguo', type: 3 })
+    return jsonify({ ver: 2, name: '黄果短剧', api: 'csp_qs_huangguo', type: 3 })
 }
 
 async function getConfig() {

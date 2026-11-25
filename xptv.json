@@ -4,20 +4,20 @@
     {
       "name": "Jable TV (增强版)",
       "type": 3,
-      "api": "csp_jable",
-      "ext": "https://ghp.xptvhelper.link/https://raw.githubusercontent.com/qs858053851-wq/xptv-extensions/main/js/jable.js"
+      "api": "csp_qs_jable",
+      "ext": "https://ghp.xptvhelper.link/https://raw.githubusercontent.com/qs858053851-wq/xptv-extensions/main/js/jable.js?v=1.0.1"
     },
     {
       "name": "黄果短剧 (增强版)",
       "type": 3,
-      "api": "csp_huangguo",
-      "ext": "https://ghp.xptvhelper.link/https://raw.githubusercontent.com/qs858053851-wq/xptv-extensions/main/js/huangguo.js?v=3.0.0"
+      "api": "csp_qs_huangguo",
+      "ext": "https://ghp.xptvhelper.link/https://raw.githubusercontent.com/qs858053851-wq/xptv-extensions/main/js/huangguo.js?v=3.0.1"
     },
     {
       "name": "红果短剧 (增强版)",
       "type": 3,
-      "api": "csp_hongguo",
-      "ext": "https://ghp.xptvhelper.link/https://raw.githubusercontent.com/qs858053851-wq/xptv-extensions/main/js/hongguo.js?v=1.0.0"
+      "api": "csp_qs_hongguo",
+      "ext": "https://ghp.xptvhelper.link/https://raw.githubusercontent.com/qs858053851-wq/xptv-extensions/main/js/hongguo.js?v=1.0.1"
     }
   ]
 }

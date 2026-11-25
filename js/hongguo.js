@@ -203,7 +203,7 @@ function parseCardsFromHtml(html) {
 // ---------- 接口 ----------
 
 async function getLocalInfo() {
-    return jsonify({ ver: 2, name: '红果短剧', api: 'csp_hongguo', type: 3 })
+    return jsonify({ ver: 2, name: '红果短剧', api: 'csp_qs_hongguo', type: 3 })
 }
 
 async function getConfig() {
